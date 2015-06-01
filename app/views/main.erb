@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/application.css">
+
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+
+
+  
+
+
+<title>Online Connect</title>
+
+</head>
+
+
+<body>
+
+  <!-- user auth logic -->
+
+
+
+  <div class="bigWrapper">
+
+    <!-- <div class="board cf">
+      <div class="win" style="display: none">You Win
+      </div>
+    </div>
+
+    <div class="board-legs">
+
+    </div>
+
+    <div class="coin-slot">
+
+      <div id="coin-blue" class="coin blue"></div>
+      <div id="coin-yellow" class="coin yellow">< /div>
+
+    </div> -->
+
+    <div class = "whiteBoard">
+
+      <% if @user.nil? %>
+        <%= erb :_login, layout: false %>
+      <% else %>
+        <% if @user.password == params[:password] %>
+          <% session[:user_id] = @user.id %>
+          <%= erb :_game, layout: false %>
+        <% end %>
+      <% end %>
+      
+    </div>
+
+  </div>
+
+
+  
+  
+</body>
+</html>
